@@ -1,8 +1,8 @@
 # javascript
-🧠 JavaScript Practice and Projects Repository
+<h1>🧠 JavaScript Practice and Projects Repository</h1>
 This repository contains structured JavaScript code examples and mini projects designed for learners and developers to practice essential JavaScript concepts. It progresses from the basics to real-world implementations, making it ideal for skill-building and revision.
 
-📚 Topics Covered
+<h1>📚 Topics Covered</h1>
 Variables (let, const, var)
 
 Data types (string, number, boolean, null, undefined, object, array)
@@ -29,7 +29,7 @@ Asynchronous JavaScript (Promises, fetch, async/await)
 
 Simple projects to apply all concepts
 
-📂 Repository Structure
+<h1>📂 Repository Structure</h1>
 /basics – Core syntax, variables, and operations
 
 /control-flow – Conditional logic and loops
