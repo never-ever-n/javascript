@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Rock Paper Scissors</p>
+    <button style="background-color: #3e5c78;color:white;" onclick="
+    computerChoice=Math.floor(Math.random()*3)+1
+    if(computerChoice==1){
+        console.log(`Draw`)
+        alert(`Your Choice=Rock\nComputer Choice=Rock\nDRAW`)
+    }else if(computerChoice==2){
+        console.log(`Computer WINS`)
+        alert(`Your Choice=Rock\nComputer Choice=Paper\nCOMPUTER WINS`)
+    }else{
+        console.log(`You WINS`)
+        alert(`Your Choice=Rock\nComputer Choice=Scissors\nYOU WINS`)
+    }
+    ">Rock</button>
+    <button style="background-color: #1d2c46;color:white;" onclick="
+    computerChoice=Math.floor(Math.random()*3)+1
+    if(computerChoice==1){
+        console.log(`You WINS`)
+        alert(`Your Choice=Paper\nComputer Choice=Rock\nYOU WINS`)
+    }else if(computerChoice==2){
+        console.log(`Draw`)
+        alert(`Your Choice=Paper\nComputer Choice=Paper\nDRAW`)
+    }else{
+        console.log(`Computer WINS`)
+        alert(`Your Choice=Paper\nComputer Choice=Scissors\nCOMPUTER WINS`)
+    }">Paper</button>
+    <button style="background-color: #0f1523;color:white" onclick="
+    computerChoice=Math.floor(Math.random()*3)+1
+    if(computerChoice==1){
+        console.log(`Computer WINS`)
+        alert(`Your Choice=Scissors\nComputer Choice=Rock\nCOMPUTER WINS`)
+    }else if(computerChoice==2){
+        console.log(`You WINS`)
+        alert(`Your Choice=Scissors\nComputer Choice=Paper\nYOU WINS`)
+    }else{
+        console.log(`Draw`)
+        alert(`Your Choice=Scissors\nComputer Choice=Scissors\nDRAW`)
+    }">Scissors</button>
+</body>
+<script>
+    let computerChoice=0
+</script>
+</html>
