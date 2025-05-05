@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Rock Paper Scissors</p>
+    <button style="background-color: #3e5c78;color:white;" onclick="
+    computerChoice=Math.floor(Math.random()*3)+1
+    yourChoice=1
+    check(yourChoice,computerChoice)
+    ">Rock</button>
+    <button style="background-color: #1d2c46;color:white;" onclick="
+    computerChoice=Math.floor(Math.random()*3)+1
+    yourChoice=2
+    check(yourChoice,computerChoice)">Paper</button>
+    <button style="background-color: #0f1523;color:white" onclick="
+    computerChoice=Math.floor(Math.random()*3)+1
+    yourChoice=3
+    check(yourChoice,computerChoice)">Scissors</button>
+</body>
+<script>
+    let computerChoice=0
+    let yourChoice=0
+    let result=""
+    let arry=["Rock","Paper","Scissors"];
+    function check(your,comp){
+        if(comp==your){
+            result="Draw"
+            print(your,comp,result)
+        }else if((your==1&&comp==2)||(your==2&&comp==3)||(your==3&&comp==1)){
+            result="Computer WINS"
+            print(your,comp,result)
+        }else{
+            result="You WIN"
+            print(your,comp,result)
+        }
+
+    }
+    function print(your,comp,result){
+        alert(`Your Choice=${arry[your-1]}\nComputer Choice=${arry[comp-1]}\n${result}`)
+    }
+</script>
+</html>
