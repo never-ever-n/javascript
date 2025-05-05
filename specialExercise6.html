@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="units.js">
+    <title>Document</title>
+</head>
+<body>
+    <p>6 Booleans and If-Statement</p>
+    <button onclick="
+    console.log(`Card Quantity: ${cardQuantity}`)"
+    >Show Quantity</button>
+    <button onclick="
+        cardQuantity++
+        if(cardQuantity>10){
+            alert(`The cart is full`)
+            cardQuantity--
+        }else{
+            console.log(`Card Quantity: ${cardQuantity}`)
+        }"
+    >Add to Cart</button>
+    <button onclick="
+        cardQuantity=cardQuantity+2
+        if(cardQuantity>10){
+            alert(`The cart is full`)
+            cardQuantity=cardQuantity-2
+        }else{
+        console.log(`Card Quantity: ${cardQuantity}`)
+        }"
+    >+2</button>
+    <button onclick="
+        cardQuantity=cardQuantity+3
+        if(cardQuantity>10){
+            alert(`The cart is full`)
+            cardQuantity=cardQuantity-3
+        }else{
+            console.log(`Card Quantity: ${cardQuantity}`)
+        }">+3</button>
+    <button onclick="
+        cardQuantity+=4
+        if(cardQuantity>10){
+            alert(`The cart is full`)
+            cardQuantity-=4
+        }else{
+            console.log(`Card Quantity: ${cardQuantity}`)
+        }">+4</button>
+    <button onclick="
+        cardQuantity+=5
+        if(cardQuantity>10){
+            alert(`The cart is full`)
+            cardQuantity-=5
+        }else{
+            console.log(`Card Quantity: ${cardQuantity}`)
+        }">+5</button>
+    <button onclick="
+        cardQuantity-=2
+        if(cardQuantity<=0){
+            alert(`Not enough items in the cart`)
+            cardQuantity+=2
+        }
+        console.log(`Card Quantity: ${cardQuantity}`)">-2</button>
+    <button onclick="
+        cardQuantity-=3
+        if(cardQuantity<=0){
+            alert(`Not enough items in the cart`)
+            cardQuantity+=3
+        }
+        console.log(`Card Quantity: ${cardQuantity}`)">-3</button>
+    <button onclick="
+        if(cardQuantity>0){
+            cardQuantity-=1
+        }else{
+            alert(`Not enough items in the cart`)
+        }
+        console.log(`Card Quantity: ${cardQuantity}`)">Remove from Cart</button>
+    <button onclick="
+        cardQuantity=0
+        console.log(`Card Quantity: ${cardQuantity}`)">Reset Card</button>
+</body>
+<script>
+    let cardQuantity=0
+    let name="nikhil"
+    console.log(`My name is: ${name}`)
+    let coffee=5
+    let bagels=3
+    let soup=9
+    let cost=coffee+2*bagels+soup
+    console.log(`Cost of food: ${cost}`)
+    let tax=cost*0.1
+    console.log(`Tax (10%): $${tax}`)
+    let total=cost+tax
+    console.log(`Total cost: $${total}`)
+</script>
+</html>
