@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>6 Booleans and If-Statement</p>
+</body>
+<script>
+    const randomNumber=Math.random()
+    let result=''
+    let guess=prompt("guess? (Heads/Tails): ")
+    if(randomNumber<0.5){
+        console.log("heads")
+        result="heads"
+    }else{
+        console.log("tails")
+        result="tails"
+    }
+    if(result===guess){
+        console.log("You win")
+    }else{
+        console.log("You lost")
+    }
+    console.log("using ternary operator")
+    randomNumber<0.5? console.log("heads"):console.log("tails")
+</script>
+</html>
