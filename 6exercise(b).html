@@ -10,7 +10,8 @@
 </body>
 <script>
     let age=prompt("Enter your age: ")
-    if(age<=6 || age>=65){
+    let holiday=prompt("is holiday? (yes/no): ")
+    if((age<=6 || age>=65)&&holiday==="no"){
         console.log("Discount")
     }else{
         console.log("No Discount")
