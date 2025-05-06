@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>7 Functions</p>
+</body>
+<script>
+    function convert(temp,si){
+        if(si=='c'||si=='C'){
+            let calculation=temp*(9/5)+32
+            alert(`Covert Temperature(${temp},${si})=>${calculation}`)
+        }else if(si=='f'||si=='F'){
+            let calculation=(temp-32)*(5/9)
+            alert(`Covert Temperature(${temp},${si})=>${calculation}`)
+        }else{
+            alert("invalid")
+        }
+    }
+</script>
+</html>
