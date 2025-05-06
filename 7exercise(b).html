@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>7 Functions</p>
+</body>
+<script>
+    function convert_mi_km(length,from){
+        if(from=='miles'){
+            let km=length*1.6
+            alert(`${km}km`)
+        }else{
+            let mi=length*(1/1.6)
+            alert(`${mi}miles`)
+        }
+    }
+    function convert_mi_ft(length,from){
+        if(from=='miles'){
+            let ft=length*5280
+            alert(`${ft}ft`)
+        }else{
+            let mi=length*(1/5280)
+            alert(`${mi}miles`)
+        }
+    }
+    function convert_km_ft(length,from){
+        if(from=='km'){
+            let ft=length*3281
+            alert(`${ft}ft`)
+        }else{
+            let km=length*(1/3281)
+            alert(`${km}km`)
+        }
+    }
+    function convert(length,from,to){
+        if((from=='km'&&to=='km')||(from=='miles'&&to=='miles')||(from=='ft'&&to=='ft')){
+            alert(`${length}${from}`)
+        }else if(from=='miles'){
+            if(to=='km'){
+                convert_mi_km(length,from)
+            }else if(to=='ft'){
+                convert_mi_ft(length,from)
+            }
+        }else if(from=='km'){
+            if(to=='miles'){
+                convert_mi_km(length,from)
+            }else if(to=='ft'){
+                convert_km_ft(length,from)
+            }
+        }else{
+            alert(`Invalid unit: ${from}`)
+        }
+    }
+</script>
+</html>
