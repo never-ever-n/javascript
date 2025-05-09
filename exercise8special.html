@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>8 objects</p>
+    <button style="background-color: #4169E1; color:white" onclick="{
+        your='heads'
+        let com=Math.random()
+        convert(com,your)
+    }">Heads</button>
+    <button style="background-color: 	#3CB371; color:white" onclick="{
+        your='tails'
+        let com=Math.random()
+        convert(com,your)
+    }">Tails</button>
+    <button style="background-color: #FF6347; color:white" onclick="
+    score.wins=0
+    score.losses=0
+    localStorage.setItem('score',JSON.stringify(score))
+    alert(`Data has been reset`)
+    ">Reset</button>
+</body>
+<script>
+    let result=''
+    let your=""
+    let comp=''
+    const score=JSON.parse(localStorage.getItem('score'))||{
+        wins:0,
+        losses:0,
+    }
+    function check(comp,your){
+        if(comp===your){
+            result="Right Guess"
+            score.wins+=1
+            localStorage.setItem('score',JSON.stringify(score))
+        }else{
+            result="Wrong Guess"
+            score.losses+=1
+            localStorage.setItem('score',JSON.stringify(score))
+        }
+        print()
+    }
+    function convert(comp,your){
+        comp<0.5?check('heads',your):check('tails',your)
+    }
+    function print(){
+        alert(`${result}\nWins: ${score.wins}\tLosses: ${score.losses}`)
+    }
+    console.log(score)
+</script>
+</html>
