@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <!-- problem 9a -->
+     <button id="but1">9a</button>
+     <br>
+     <br>
+    <!-- problem 9b -->
+     <button id="but2">9b</button>
+     <br>
+     <br>
+    <!-- problem 9c -->
+      <button id="heads" onclick="
+      para1.innerText='you chose: '+heads.innerText
+      para1.style.display='block'
+      ">Heads</button>
+      <button id="tails" onclick="
+      para1.innerText='you chose: '+tails.innerText
+      para1.style.display='block'
+      ">Tails</button>
+      <p style="display: none;" id="para1"></p>
+      <br>
+    <!-- problem 9d -->
+     <br>
+     <input placeholder="Name" id="name1">
+     <button id="submit" onclick="
+     print1()">Submit</button>
+     <p id="para2" style="display: none;"></p>
+     <br>
+    <!-- problem 9e -->
+     <h3>press enter to submit</h3>
+     <input placeholder="Name" id="name2" onkeydown="
+     if(event.key==='Enter'){
+        print2()
+     }">
+     <button id="submit" onclick="
+     print2()">Submit</button>
+     <p id="para3" style="display: none;"></p>
+</body>
+<script>
+    const buts1=document.querySelector("#but1")
+    console.log(buts1.innerText)
+    const buts2=document.querySelector("#but2")
+    buts2.innerText="9b done!"
+    const heads=document.querySelector("#heads")
+    const tails=document.querySelector("#tails")
+    const para1=document.querySelector("#para1")
+
+    let name1=document.querySelector("#name1")
+    let para2=document.querySelector("#para2")
+
+    function print1(){
+        para2.innerText="Your name is: "+name1.value
+        para2.style.display="block"
+    }
+
+    let name2=document.querySelector("#name2")
+    let para3=document.querySelector("#para3")
+    function print2(){
+        para3.innerText="Your name is: "+name2.value
+        para3.style.display="block"
+    }
+</script>
+</html>
