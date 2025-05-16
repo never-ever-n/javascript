@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cart Quantity</title>
+  </head>
+  <body>
+    <button onclick="
+      check(0)
+    ">Show Quantity</button>
+
+    <button onclick="
+      check(1)
+    ">Add to Cart</button>
+
+    <button onclick="
+      check(2)
+    ">+2</button>
+
+    <button onclick="
+      check(3)
+    ">+3</button>
+
+    <button onclick="
+      check(4)">+4</button>
+
+    <button onclick="
+      check(5)">+5</button>
+    
+    <button onclick="
+      cartQuantity = 0
+      check(0)
+    ">Reset Cart</button>
+
+    <button onclick="
+      check(-1)">-1</button>
+
+    <button onclick="
+      check(-2)">-2</button>
+
+    <p id="para1" style="display: none;"></p>
+
+    <script>
+      let cartQuantity = 0;
+      let text="Card Quantity: "
+      const para1=document.querySelector("#para1")
+      function check(num){
+        if(cartQuantity+num>=11 ||cartQuantity+num<0){
+            return
+        }else{
+            cartQuantity+=num
+        }
+        para1.innerText=text+cartQuantity
+        para1.style.display="block"
+      }
+    </script>
+  </body>
+</html>
