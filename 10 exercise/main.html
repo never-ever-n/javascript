@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Projects</title>
+</head>
+<body>
+    <p>You Tube Subcribe Button</p>
+    <button id="but1">Subcribe</button>
+    <br>
+    <br>
+    <br>
+    <p>Rock Paper Scissors</p>
+    <a href="/javascript/10 exercise/main2.html">Click here</a>
+    <br>
+    <br>
+    <br>
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping.</p>
+    <p>Orders over $40 = FREE shipping.</p>
+    <input placeholder="Cost of price" id="price" onkeydown="
+    if(event.key==='Enter'){
+        calculator()
+    }">
+    <button onclick="
+    calculator()
+    " id="but2">Calculate</button>
+    <p id="total" style="display: none;"></p>
+    <br>
+    <br>
+    <br>
+    <a href="/javascript/10 exercise/2nd.html">CSS version of these projects</a>
+</body>
+<script>
+    let totals=document.querySelector("#total")
+    const buttonOne=document.querySelector("#but1");
+    buttonOne.addEventListener("click",()=>{
+        if(buttonOne.innerText==='Subcribe'){
+            buttonOne.innerText="Subcribed"
+        }else{
+            buttonOne.innerText="Subcribe"
+        }
+    })
+    function calculator(){
+        const prices=document.querySelector("#price")
+        if(prices.value<=40){
+            totals.innerText="$"+eval(prices.value+"+"+10)
+        }else{
+            totals.innerText="$"+price.value
+        }
+        totals.style.display="block"
+    }
+</script>
+</html>

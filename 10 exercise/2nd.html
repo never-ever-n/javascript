@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Projects</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #but1{
+            background-color: black;
+            color:white;
+            font-weight: 600;
+            height: 30px;
+            border:none;
+            border-radius: 50px;
+            margin-bottom: 30px;
+        }
+        #but2{
+            background-color: green;
+            color:white;
+            height: 45px;
+            border:none;
+            cursor:pointer
+        }
+        #price{
+            height: 40px;
+        }
+        input::placeholder{
+            font-size: 15px;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p>You Tube Subcribe Button</p>
+    <button id="but1">Subcribe</button>
+    <br>
+    <br>
+    <br>
+    <p>Rock Paper Scissors</p>
+    <a href="/javascript/10 exercise/3rd.html">Click here</a>
+    <br>
+    <br>
+    <br>
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping.</p>
+    <p>Orders over $40 = FREE shipping.</p>
+    <input placeholder="Cost of price" id="price" onkeydown="
+    if(event.key==='Enter'){
+        calculator()
+    }">
+    <button onclick="
+    calculator()
+    " id="but2">Calculate</button>
+    <p id="total" style="display: none;"></p>
+</body>
+<script>
+    let totals=document.querySelector("#total")
+    const buttonOne=document.querySelector("#but1");
+    buttonOne.addEventListener("click",()=>{
+        if(buttonOne.innerText==='Subcribe'){
+            buttonOne.innerText="Subcribed"
+            buttonOne.style.backgroundColor="#D3D3D3"
+            buttonOne.style.color="black"
+        }else{
+            buttonOne.innerText="Subcribe"
+            buttonOne.style.backgroundColor="black"
+            buttonOne.style.color="white"
+        }
+    })
+    function calculator(){
+        const prices=document.querySelector("#price")
+        if(prices.value<=40){
+            totals.innerText="$"+eval(prices.value+"+"+10)
+        }else{
+            totals.innerText="$"+price.value
+        }
+        totals.style.display="block"
+    }
+</script>
+</html>

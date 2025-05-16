@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <style>
+        body{
+            background-color: #191919;
+            color:white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            color:white;
+            font-weight: 600;
+        }
+        #div1{
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .buttons{
+            height: 120px;
+            width: 120px;
+            border:none;
+            border-radius: 50%;
+            margin-right: 10px;
+            cursor: pointer;
+            background-color: transparent;
+            border:2px solid white;
+        }
+        #but1{
+            background-image: url(images/rock-emoji.png);
+            background-size: 50%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #but2{
+            background-image: url(images/paper-emoji.png);
+            background-size: 50%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #but3{
+            background-image: url(images/scissors-emoji.png);
+            background-size: 50%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #main-part{
+            display: flex;
+            flex-direction: row;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .blocks{
+            height: 75px;
+            width: 75px;
+        }
+        #text4{
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .rock{
+            background-image: url(images/rock-emoji.png);
+            background-size: 50%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .paper{
+            background-image: url(images/paper-emoji.png);
+            background-size: 50%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .scissor{
+            background-image: url(images/scissors-emoji.png);
+            background-size: 50%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #buts{
+            height: 30px;
+            width: 112px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rock Paper Scissors</h1>
+    <div id="div1">
+        <button class="buttons" id="but1" onclick="
+    computerChoice=Math.floor(Math.random()*3)+1
+    yourChoice=1
+    check(yourChoice,computerChoice)
+    "></button>
+    <button class="buttons" id="but2" onclick="
+    computerChoice=Math.floor(Math.random()*3)+1
+    yourChoice=2
+    check(yourChoice,computerChoice)"></button>
+    <button class="buttons" id="but3"onclick="
+    computerChoice=Math.floor(Math.random()*3)+1
+    yourChoice=3
+    check(yourChoice,computerChoice)"></button>
+    </div>
+    <div style="display:none;" id="box">
+        <h2 id="text4"></h2>
+        <div id="main-part">
+            <p>You</p>
+            <div class="blocks" id="block1"></div>
+            <p>Computer</p>
+            <div class="blocks" id="block2"></div>
+        </div>
+    </div>
+    <h4 id="text3"></h4>
+    <button id="buts" onclick="
+        obj.wins=0
+        obj.losses=0
+        obj.ties=0
+        localStorage.setItem('obj',JSON.stringify(obj))
+        texts3.innerText=`Wins:${obj.wins}\t Losses:${obj.losses}\t Ties:${obj.ties}`
+        alert(`Score has reseted`)
+        ">Reset Score</button>
+</body>
+<script>
+    const obj=JSON.parse(localStorage.getItem("obj"))||{
+        wins:0,
+        losses:0,
+        ties:0,
+    }
+    let block1=document.querySelector("#block1")
+    let block2=document.querySelector("#block2")
+    let element=document.querySelector("#box")
+    let texts3=document.querySelector("#text3")
+    let texts4=document.querySelector("#text4")
+    let computerChoice=0
+    let yourChoice=0
+    let result=""
+    let arry=["Rock","Paper","Scissors"]
+    texts3.innerText=`Wins:${obj.wins}\t Losses:${obj.losses}\t Ties:${obj.ties}`
+    function check(your,comp){
+        if(comp==your){
+            result="Draw"
+            obj.ties++
+            localStorage.setItem("obj",JSON.stringify(obj))
+            print(your,comp,result)
+        }else if((your==1&&comp==2)||(your==2&&comp==3)||(your==3&&comp==1)){
+            result="Computer WINS"
+            obj.losses++
+            localStorage.setItem("obj",JSON.stringify(obj))
+            print(your,comp,result)
+        }else{
+            result="You WIN"
+            obj.wins++
+            localStorage.setItem("obj",JSON.stringify(obj))
+            print(your,comp,result)
+        }
+    }
+    function print(your,comp,result){
+        last_part(your,comp)
+        element.style.display="block"
+        text4.innerText=result
+        texts3.innerText=`Wins:${obj.wins}\t Losses:${obj.losses}\t Ties:${obj.ties}`
+    }
+    function last_part(your,comp){
+        if(your==1){
+            block1.classList.add('rock')
+            block1.classList.remove('paper')
+            block1.classList.remove('scissor')
+            
+        }else if(your==2){
+            block1.classList.add('paper')
+            block1.classList.remove('rock')
+            block1.classList.remove('scissor')
+        }else{
+            block1.classList.add('scissor')
+            block1.classList.remove('rock')
+            block1.classList.remove('paper')
+        }
+        if(comp==1){
+            block2.classList.add('rock')
+            block2.classList.remove('paper')
+            block2.classList.remove('scissor')
+        }else if(comp==2){
+            block2.classList.add('paper')
+            block2.classList.remove('rock')
+            block2.classList.remove('scissor')
+        }else{
+            block2.classList.add('scissor')
+            block2.classList.remove('rock')
+            block2.classList.remove('paper')
+        }
+    }
+</script>
+</html>
