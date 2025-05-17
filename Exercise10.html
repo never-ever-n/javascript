@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #but1{
+            background-color: rgb(255,216,20);
+            color: black;
+            height: 30px;
+            width: 100px;
+            border:none;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+        #div1{
+            display: flex;
+            gap: 20px;
+        }
+        #but2{
+            background-color: black;
+            color:white;
+            border: none;
+            height: 50px;
+            width: 120px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        #but3{
+            background-color: rgb(230,230,230);
+            color:black;
+            border: none;
+            height: 50px;
+            width: 150px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .buts{
+            background-color: rgb(230,230,230);
+            color:black;
+            border: none;
+            height: 50px;
+            width: 150px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .is-toggled{
+            background-color: black;
+            color:white;
+            border: none;
+            height: 50px;
+            width: 150px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- problem 10a -->
+    <button id="but1" >Add to Cart</button>
+    <br>
+    <br>
+    <!-- problem 10b -->
+     <div id="div1">
+        <button id="but2">Request now</button>
+        <button id="but3">Schedule for later</button>
+     </div>
+    <br>
+    <br>
+    <!-- problem 10c -->
+     <button class="js-button">Test</button>
+     <br>
+     <br>
+    <!-- problem 10d -->
+     <button onclick="
+     checks(gaming)" class="buts" id="gaming">Gaming</button>
+    <!-- problem 10e -->
+     <button onclick="
+     checks(music)" class="buts" id="music">Music</button>
+     <button onclick="
+     checks(tech)" class="buts" id="tech">Tech</button>
+
+</body>
+<script>
+    let check=document.querySelector(".js-button").classList.contains("js-button")
+    console.log(check);
+    let gaming=document.querySelector("#gaming")
+    let music=document.querySelector("#music")
+    let tech=document.querySelector("#tech")
+    function checks(para){
+        if(para.classList.contains("is-toggled")){
+            para.classList.remove("is-toggled")
+        }else{
+            para.classList.add("is-toggled")
+        }
+    }
+</script>
+</html>
