@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+  <style>
+    #order{
+      height: 40px;
+      width: 150px;
+    }
+    #date{
+      height: 40px;
+      width: 95px;
+    }
+    #add{
+      width: 100px;
+      height: 45px;
+      background-color: green;
+      border: none;
+      color:white;
+    }
+    .box{
+      display:flex;
+      flex-wrap: wrap;
+      gap:10px
+    }
+    .para1{
+      width: 150px;
+      height: 30px;
+      display: flex;
+      justify-content: start;
+      align-items:center;
+    }
+    .para2{
+      width: 95px;
+      height: 30px;
+      text-align: center;
+      display: flex;
+      justify-content: start;
+      align-items:center;
+    }
+    .buts{
+      width: 100px;
+      height: 30px;
+      margin-top: 16px;
+      background-color: red;
+      color:white;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Todo list pratice 1 -->
+  <p>Todo List Practice 1</p>
+  <input type="text" id="txt" placeholder="Todo name" onkeyup="
+  if(event.key=='Enter'){
+    print()
+  }">
+  <button onclick="
+  print()
+  ">add</button>
+  <br>
+  <br>
+  <!-- Todo list pratice 2 -->
+  <p>Todo List Practice 2</p>
+  <input type="text" id="txt1" placeholder="Todo name" onkeyup="
+  if(event.key=='Enter'){
+    print1()
+  }">
+  <button onclick="
+  print1()
+  ">add</button>
+  <div id="something" style="display: none;"></div>
+  <br>
+  <br>
+  <br>
+  <!-- main Todo list -->
+  <p>Todo List</p>
+  <input id="order" type="text" placeholder="Todo name" onkeyup="
+  ">
+  <input type="date" id="date">
+  <button id="add" onclick="
+  output()
+  ">add</button>
+  <p id="information" style="display: none;color:red">Error: check the details</p>
+  <div id="maindiv"></div>
+</body>
+<script>
+  let txt=document.querySelector("#txt")
+  let task=[]
+  function print(){
+    task.push(txt.value)
+    console.log(task)
+    txt.value=""
+  }
+  let txt1=document.querySelector("#txt1")
+  let something=document.querySelector("#something")
+  let task1=[]
+
+  let infoHtml="";
+  function print1(){
+    task1.push(txt1.value)
+    const info=`<p>${task1[task1.length-1]}</p>`
+    infoHtml+=info
+    something.innerHTML=infoHtml
+    something.style.display="block"
+    txt1.value=""
+  }
+
+  const obj=JSON.parse(localStorage.getItem("objs"))||{
+    dates:[],
+    tasks:[],
+  }
+  let order=document.querySelector("#order")
+  let date=document.querySelector("#date")
+  let divHtml=""
+  let maindiv=document.querySelector("#maindiv")
+  function output(){
+    if(order.value==""||date.value==""){
+      document.querySelector("#information").style.display="block"
+      return
+    }
+    obj.tasks.push(order.value)
+    obj.dates.push(date.value)
+    maindiv.innerHTML=""
+    for(i=0;i<obj.tasks.length;i++){
+      const divs=`<div class="box"><p class="para1">${obj.tasks[i]}</p><p class="para2">${obj.dates[i]}</p><button onclick="deletes(${i})" class="buts">Delete</button></div>`
+      maindiv.innerHTML+=divs;
+    }
+    localStorage.setItem("objs",JSON.stringify(obj))
+    order.value=""
+    date.value=""
+  }
+  let buts=document.querySelector(".buts")
+  function deletes(index){
+    obj.tasks.splice(index,1)
+    obj.dates.splice(index,1)
+    localStorage.setItem("objs",JSON.stringify(obj))
+    output1()
+  }
+  function output1(){
+    maindiv.innerHTML=""
+    for(i=0;i<obj.tasks.length;i++){
+      const divs=`<div class="box"><p class="para1">${obj.tasks[i]}</p><p class="para2">${obj.dates[i]}</p><button onclick="deletes(${i})" class="buts">Delete</button></div>`
+      maindiv.innerHTML+=divs;
+    }
+  }
+  output1()
+</script>
+</html>
