@@ -1,0 +1,23 @@
+body{
+        background-color:#000000;
+    }
+#heading{
+        color:white;
+        padding-left: 10px;
+    }
+    .buts1{
+        height: 50px;
+        width: 50px;
+        border: none;
+        border-radius: 50%;
+        background-color: #333333;
+        color:white;
+    }
+    .buts2{
+        height: 50px;
+        width: 50px;
+        border: none;
+        border-radius: 50%;
+        background-color: #fe9d0d;
+        color:white;
+    }
