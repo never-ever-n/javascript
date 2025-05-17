@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .buts{
+            background-color: rgb(230,230,230);
+            color:black;
+            border: none;
+            height: 50px;
+            width: 150px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .is-toggled{
+            background-color: black;
+            color:white;
+            border: none;
+            height: 50px;
+            width: 150px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        #but2{
+            background-color: green;
+            color:white;
+            height: 45px;
+            border:none;
+            cursor:pointer
+        }
+        #price{
+            height: 40px;
+        }
+        input::placeholder{
+            font-size: 15px;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- problem 10g -->
+     <button onclick="
+     gaming.classList.add(`is-toggled`)
+     music.classList.remove(`is-toggled`)
+     tech.classList.remove(`is-toggled`)
+     " class="buts" id="gaming">Gaming</button>
+     <button onclick="
+     music.classList.add(`is-toggled`)
+     tech.classList.remove(`is-toggled`)
+     gaming.classList.remove(`is-toggled`)
+     " class="buts" id="music">Music</button>
+     <button onclick="
+     tech.classList.add(`is-toggled`)
+     gaming.classList.remove(`is-toggled`)
+     music.classList.remove(`is-toggled`)
+     " class="buts" id="tech">Tech</button>
+     <!-- problem 10h -->
+      <br>
+      <br>
+    <p style="opacity: 0.9;">Amazon Shipping Calculator</p>
+    <p style="opacity: 0.9;">Orders under $40 = +$10 shipping.</p>
+    <p style="opacity: 0.9;">Orders over $40 = FREE shipping.</p>
+    <input placeholder="Cost of price" id="price" onkeydown="
+    if(event.key==='Enter'){
+        calculator()
+    }">
+    <button onclick="
+    calculator()
+    " id="but2">Calculate</button>
+    <p id="error" style="display: none;color:red">Error: cost cannot be less than or equal to $0</p>
+    <p id="total" style="display: none;"></p>
+</body>
+<script>
+    let gaming=document.querySelector("#gaming")
+    let music=document.querySelector("#music")
+    let tech=document.querySelector("#tech")
+    let totals=document.querySelector("#total")
+    let error=document.querySelector("#error")
+    function calculator(){
+        const prices=document.querySelector("#price")
+        if(prices.value<=0){
+            error.style.display="block"
+        }else if(prices.value<=40){
+            totals.innerText="$"+eval(prices.value+"+"+10)
+        }else{
+            totals.innerText="$"+price.value
+        }
+        totals.style.display="block"
+    }
+</script>
+</html>
