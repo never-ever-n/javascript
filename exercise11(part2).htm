@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // question 11o
+  let arr=["hello","word","search","good"]
+  index=-1
+  for(i=0;i<arr.length;i++){
+    if(arr[i]=="search"){
+      console.log(i);
+      index=i;
+    }
+  }
+  if(index==-1){
+    console.log(-1);
+  }
+  // question 11p
+  arr=["hello","word","search","good","search"]
+  index=-1
+  for(i=0;i<arr.length;i++){
+    if(arr[i]=="search"){
+      index=i;
+      break;
+    }
+  }
+  console.log(index);
+  // problem 11q
+  function findIndex(arr,word){
+    for(i=0;i<arr.length;i++){
+      if(arr[i]==word){
+        return i;
+      }
+    }
+    return -1;
+  }
+  arr=["green","red","blue","red"]
+  console.log(findIndex(arr,"red"));
+  // problem 11r
+  function removeEgg(arr){
+    let newarr=[]
+    for(i=0;i<arr.length;i++){
+      if(arr[i]!="egg"){
+        newarr.push(arr[i]);
+      }
+    }
+    return newarr;
+  }
+  arr=["egg","apple","egg","egg","ham"]
+  console.log(removeEgg(arr))
+  // problem 11s
+  function removeEgg2(arr){
+    let newarr=[]
+    count=0;
+    for(i=0;i<arr.length;i++){
+      if(arr[i]=="egg"&&count<2){
+        count++;
+        continue;
+      }
+      newarr.push(arr[i]);
+    }
+    return newarr;
+  }
+  arr=["egg","apple","egg","egg","ham"]
+  console.log(removeEgg2(arr))
+  // problem 11t
+  function removeEgg3(arr){
+    let newarr=[]
+    count=0;
+    for(i=0;i<arr.length;i++){
+      if(arr[i]=="egg"&&count<2){
+        count++;
+        continue;
+      }
+      newarr.push(arr[i]);
+    }
+    return newarr.reverse;
+  }
+  arr=["egg","apple","egg","egg","ham"]
+  console.log(removeEgg3(arr))
+  // challenge exercise
+  // problem 11v
+  for(i=1;i<=20;i++){
+    if(i%3==0 &&i%5==0){
+      console.log("FizzBuzz")
+    }else if(i%3==0){
+      console.log("Fizz")
+    }else if(i%5==0){
+      console.log("Buzz")
+    }else{
+      console.log(i)
+    }
+  }
+  // problem 11w
+  function unique(arr){
+    newarr=[]
+    arr=arr.sort()
+    console.log(arr)
+    for(i=0;i<arr.length;i++){
+      if(i==arr.length-1){
+        newarr.push(arr[i])
+      }else if(arr[i]!=arr[i+1]){
+        newarr.push(arr[i])
+      }
+    }
+    return newarr
+  }
+  console.log(unique(["green","red","blue","red"]))
+</script>
+</html>
