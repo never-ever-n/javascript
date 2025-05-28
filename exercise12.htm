@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Functions</title>
+</head>
+<body>
+  <button class="but1">Start</button>
+  <br>
+  <br>
+  <button class="but2">Start</button>
+  <br>
+  <br>
+  <button class="but3">Add to Cart</button>
+  <p class="para1"></p>
+  <button class="but4">Add to Cart</button>
+  <p class="para2"></p>
+  <button class="but5">Add</button>
+  <button class="but6">Remove</button>
+  <br>
+  <br>
+  <button class="but7">Add</button>
+  <button class="but8">Remove</button>
+</body>
+<script>
+  // problem no 12a
+  const add=()=>{
+    console.log(2+3)
+  }
+  add()
+  add()
+  // problem no 12b
+  const runtwice=(add1)=>{
+    add1()
+    add1()
+  }
+  runtwice(add)
+  // problem no 12c
+  const but1=document.querySelector(".but1")
+  but1.addEventListener("click",()=>{
+    setTimeout(()=>{
+      but1.innerText="Finished"
+    },1000)
+  })
+  // problem no 12d
+  const but2=document.querySelector(".but2")
+  but2.addEventListener("click",()=>{
+    but2.innerText="loading"
+    setTimeout(()=>{
+      but2.innerText="Finished"
+    },1000)
+  })
+  // problem no 12e
+  const but3=document.querySelector(".but3")
+  const para1=document.querySelector(".para1")
+  but3.addEventListener("click",()=>{
+    
+    setTimeout(() => {
+      para1.innerText="Added"
+    },1000);
+  })
+  // challenge exercise
+  // problem no 12f
+  const but4=document.querySelector(".but4")
+  const para2=document.querySelector(".para2")
+  let count=0;
+  but4.addEventListener("click",()=>{
+    if(count%2==0){
+      setTimeout(() => {
+      para2.innerText="Added"
+      count++;
+    },1000);
+    }else{
+      setTimeout(()=>{
+        para2.innerText=""
+        count++;
+      },1000)
+    }
+  })
+  // problem no 12g
+  // count=0;
+  // setInterval(() => {
+  //   document.title=`(${count})new message`
+  //   count++;
+  // }, 2000);
+  // problem no 12h
+  count=0
+  const but5=document.querySelector(".but5")
+  const but6=document.querySelector(".but6")
+  but5.addEventListener("click",()=>{
+    count++
+    document.title=`(${count})new message`
+  })
+  but6.addEventListener("click",()=>{
+    count--;
+    document.title=`(${count})new message`
+  })
+  // problem no 12i
+  count=0
+  const but7=document.querySelector(".but7")
+  const but8=document.querySelector(".but8")
+  but7.addEventListener("click",()=>{
+    count++
+    document.title=`(${count})new message`
+  })
+  but8.addEventListener("click",()=>{
+    if(count-1>=0){
+      count--
+      document.title=`(${count})new message`
+    }
+  })
+</script>
+</html>
